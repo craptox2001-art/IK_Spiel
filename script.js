@@ -2,9 +2,10 @@ let quizData = {};
 let currentFolder = "";
 let items = [];
 
+// JSON laden
 async function loadData() {
   try {
-    const response = await fetch("data.json"); // JSON muss im gleichen Ordner liegen
+    const response = await fetch("data.json");
     quizData = await response.json();
   } catch (e) {
     console.error("Fehler beim Laden der JSON:", e);
@@ -12,12 +13,14 @@ async function loadData() {
   }
 }
 
+// Menü anzeigen
 function showMenu() {
   document.getElementById("menu").style.display = "block";
   document.getElementById("quiz").style.display = "none";
   document.getElementById("backBtn").style.display = "none";
 }
 
+// Quiz starten
 function startQuiz(folder) {
   currentFolder = folder;
   items = [...quizData[folder]]; // Kopie der Items
@@ -27,12 +30,9 @@ function startQuiz(folder) {
   nextQuestion();
 }
 
+// Nächste Frage
 function nextQuestion() {
-  if(items.length === 0) { 
-    // reset, falls alle Fragen durch
-    items = [...quizData[currentFolder]];
-  }
-
+  if(items.length === 0) items = [...quizData[currentFolder]]; // reset
   const correct = items[Math.floor(Math.random() * items.length)];
 
   // 3 falsche Antworten
@@ -41,15 +41,15 @@ function nextQuestion() {
 
   // Antworten mischen
   const answers = [correct, ...wrong].sort(() => 0.5 - Math.random());
-
   showQuestion(correct, answers);
 }
 
+// Frage anzeigen
 function showQuestion(correct, answers) {
   const quizDiv = document.getElementById("quiz");
   quizDiv.innerHTML = "";
 
-  // Audio oder Bild
+  // Media
   if(currentFolder === "Audio Files") {
     const audio = document.createElement("audio");
     audio.controls = true;
@@ -75,7 +75,7 @@ function showQuestion(correct, answers) {
       } else {
         btn.classList.add("wrong");
       }
-      setTimeout(nextQuestion, 1000); // nächste Frage nach 1s
+      setTimeout(nextQuestion, 1000);
     };
     answersDiv.appendChild(btn);
   });
@@ -83,5 +83,11 @@ function showQuestion(correct, answers) {
   quizDiv.appendChild(answersDiv);
 }
 
-// Lade JSON direkt beim Start
-loadData().then(showMenu);
+// Event-Listener für Buttons (sicherstellen, dass JSON geladen ist)
+document.addEventListener("DOMContentLoaded", async () => {
+  await loadData();
+  showMenu();
+  document.getElementById("audioBtn").onclick = () => startQuiz("Audio Files");
+  document.getElementById("partiturBtn").onclick = () => startQuiz("Partituren");
+  document.getElementById("backBtn").onclick = showMenu;
+});
