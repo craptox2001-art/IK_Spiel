@@ -1,56 +1,30 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Musikquiz</title>
-
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 40px;
-        }
-
-        .quiz-item {
-            margin-bottom: 60px;
-            padding: 20px;
-            border: 1px solid #ccc;
-        }
-
-        img {
-            max-width: 600px;
-            display: block;
-            margin-bottom: 15px;
-        }
-
-        audio {
-            width: 100%;
-            margin-bottom: 15px;
-        }
-
-        .answers button {
-            display: block;
-            margin: 5px 0;
-            padding: 12px;
-            width: 300px;
-            cursor: pointer;
-        }
-
-        .correct {
-            background: #4CAF50;
-            color: white;
-        }
-
-        .wrong {
-            background: #E53935;
-            color: white;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Musikquiz</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 40px; text-align: center; }
+    button { margin: 5px; padding: 10px 20px; cursor: pointer; }
+    img { max-width: 500px; display: block; margin: 15px auto; }
+    audio { width: 100%; margin: 15px 0; }
+    .answers button { display: block; margin: 5px auto; width: 200px; }
+    .correct { background-color: #4CAF50; color: white; }
+    .wrong { background-color: #E53935; color: white; }
+  </style>
 </head>
 <body>
 
 <h1>Musikquiz</h1>
-<div id="quiz-container"></div>
+
+<div id="menu">
+  <button onclick="startQuiz('Audio Files')">Audio Quiz</button>
+  <button onclick="startQuiz('Partituren')">Partitur Quiz</button>
+</div>
+
+<div id="quiz" style="display:none;"></div>
+<div><button id="backBtn" onclick="showMenu()" style="display:none;">Zurück zum Menü</button></div>
 
 <script src="script.js"></script>
 </body>
