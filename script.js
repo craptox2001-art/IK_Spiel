@@ -1,66 +1,62 @@
-let data = null;
-let currentGame = null;
-let currentQuestion = null;
+async function loadQuiz() {
+    try {
+        const response = await fetch("data.json");
+        const quizData = await response.json();
 
-async function loadData() {
-    const res = await fetch('data.json');
-    data = await res.json();
-}
+        const container = document.getElementById("quiz-container");
+        container.innerHTML = "";
 
-function shuffleArray(array) {
-    return array.sort(() => Math.random() - 0.5);
-}
+        quizData.forEach((item, index) => {
+            console.log("Lade Quiz-Item:", item);
 
-function getRandomQuestion(game) {
-    const items = data[game];
-    const randomIndex = Math.floor(Math.random() * items.length);
-    return items[randomIndex];
-}
+            const div = document.createElement("div");
+            div.className = "quiz-item";
 
-function generateAnswers(game, correct) {
-    const items = data[game].filter(i => i.title !== correct.title);
-    const shuffled = shuffleArray(items).slice(0, 3);
-    const answers = shuffled.concat([correct]);
-    return shuffleArray(answers);
-}
+            // Titel
+            const h2 = document.createElement("h2");
+            h2.textContent = `Frage ${index + 1}`;
+            div.appendChild(h2);
 
-async function startQuiz(game) {
-    await loadData();
-    currentGame = game;
-    showNextQuestion();
-    document.getElementById('next-btn').addEventListener('click', showNextQuestion);
-}
-
-function showNextQuestion() {
-    const questionTitle = document.getElementById('question-title');
-    const answersDiv = document.getElementById('answers');
-
-    currentQuestion = getRandomQuestion(currentGame);
-    const answers = generateAnswers(currentGame, currentQuestion);
-
-    // Clear previous
-    answersDiv.innerHTML = '';
-
-    if (currentGame === 'audio') {
-        const audio = document.getElementById('audio-player');
-        audio.src = currentQuestion.fileUrl;
-        audio.load();
-    } else {
-        const img = document.getElementById('image-player');
-        img.src = currentQuestion.fileUrl;
-    }
-
-    answers.forEach(ans => {
-        const btn = document.createElement('button');
-        btn.textContent = ans.title;
-        btn.onclick = () => {
-            if (ans.title === currentQuestion.title) {
-                alert('✅ Richtig!');
-            } else {
-                alert(`❌ Falsch! Richtige Antwort: ${currentQuestion.title}`);
+            // Partitur
+            if (item.partitur) {
+                const img = document.createElement("img");
+                img.src = item.partitur;   // WICHTIG: NUR SO funktioniert der GitHub-Link
+                img.alt = "Partitur";
+                div.appendChild(img);
             }
-            showNextQuestion();
-        };
-        answersDiv.appendChild(btn);
-    });
+
+            // Audio
+            const audio = document.createElement("audio");
+            audio.controls = true;
+            audio.src = item.audio;
+            div.appendChild(audio);
+
+            // Antwortmöglichkeiten
+            const answersDiv = document.createElement("div");
+            answersDiv.className = "answers";
+
+            item.answers.forEach(answer => {
+                const btn = document.createElement("button");
+                btn.textContent = answer;
+
+                btn.onclick = () => {
+                    if (answer === item.correct) {
+                        btn.classList.add("correct");
+                    } else {
+                        btn.classList.add("wrong");
+                    }
+                };
+
+                answersDiv.appendChild(btn);
+            });
+
+            div.appendChild(answersDiv);
+            container.appendChild(div);
+        });
+
+    } catch (error) {
+        console.error("Fehler beim Laden der JSON:", error);
+    }
 }
+
+loadQuiz();
