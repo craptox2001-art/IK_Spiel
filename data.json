@@ -1,0 +1,66 @@
+{
+  "audio": [
+    {
+      "id": "1",
+      "title": "3-Debussy-Prélude a i'Après-midi",
+      "fileUrl": "Audio Files/3-Debussy-Prélude a i'Après-midi.mp3"
+    },
+    {
+      "id": "2",
+      "title": "7-Strauss-Rosenkavalier-Akt I",
+      "fileUrl": "Audio Files/7-Strauss-Rosenkavalier-Akt I.mp3"
+    },
+    {
+      "id": "3",
+      "title": "9-Tschaikowsky-Danse Chinoise",
+      "fileUrl": "Audio Files/9-Tschaikowsky-Danse Chinoise.mp3"
+    },
+    {
+      "id": "4",
+      "title": "16-Tschaikowsky-Sinfonie Nr. 4-II",
+      "fileUrl": "Audio Files/16-Tschaikowsky-Sinfonie Nr. 4-II.mp3"
+    },
+    {
+      "id": "5",
+      "title": "31-Ravel_Boléro_Es-Klarinette",
+      "fileUrl": "Audio Files/31-Ravel_Boléro_Es-Klarinette.mp3"
+    },
+    {
+      "id": "6",
+      "title": "2-Bizet-Carmen-Entr'acte",
+      "fileUrl": "Audio Files/2-Bizet-Carmen-Entr'acte.mp3"
+    }
+  ],
+  "partitur": [
+    {
+      "id": "1",
+      "title": "2-Bizet-Carmen-Entr'acte",
+      "fileUrl": "Partituren/2-Bizet-Carmen-Entr'acte.png"
+    },
+    {
+      "id": "2",
+      "title": "3-Debussy-Prélude a i'Après-midi",
+      "fileUrl": "Partituren/3-Debussy-Prélude a i'Après-midi.png"
+    },
+    {
+      "id": "3",
+      "title": "31-Ravel_Boléro_Es-Klarinette",
+      "fileUrl": "Partituren/31-Ravel_Boléro_Es-Klarinette.png"
+    },
+    {
+      "id": "4",
+      "title": "7-Strauss-Rosenkavalier-Akt I",
+      "fileUrl": "Partituren/7-Strauss-Rosenkavalier-Akt I.png"
+    },
+    {
+      "id": "5",
+      "title": "9-Tschaikowsky-Danse Chinoise",
+      "fileUrl": "Partituren/9-Tschaikowsky-Danse Chinoise.png"
+    },
+    {
+      "id": "6",
+      "title": "16-Tschaikowsky-Sinfonie Nr. 4-II",
+      "fileUrl": "Partituren/16-Tschaikowsky-Sinfonie Nr. 4-II.png"
+    }
+  ]
+}
