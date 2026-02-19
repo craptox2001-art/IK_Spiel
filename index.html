@@ -19,12 +19,14 @@
 <h1>Musikquiz</h1>
 
 <div id="menu">
-  <button onclick="startQuiz('Audio Files')">Audio Quiz</button>
-  <button onclick="startQuiz('Partituren')">Partitur Quiz</button>
+  <button id="audioBtn">Audio Quiz</button>
+  <button id="partiturBtn">Partitur Quiz</button>
 </div>
 
 <div id="quiz" style="display:none;"></div>
-<div><button id="backBtn" onclick="showMenu()" style="display:none;">Zurück zum Menü</button></div>
+<div>
+  <button id="backBtn" style="display:none;">Zurück zum Menü</button>
+</div>
 
 <script src="script.js"></script>
 </body>
