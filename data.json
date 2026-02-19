@@ -1,0 +1,54 @@
+{
+  "Audio Files": [
+    {
+      "title": "3-Debussy-Prélude a i'Après-midi",
+      "fileUrl": "https://raw.githubusercontent.com/craptox2001-art/IK_Spiel/main/Audio Files/3-Debussy-Pr%C3%A9lude%20a%20i'Apr%C3%A8s-midi.mp3"
+    },
+    {
+      "title": "7-Strauss-Rosenkavalier-Akt I",
+      "fileUrl": "https://raw.githubusercontent.com/craptox2001-art/IK_Spiel/main/Audio Files/7-Strauss-Rosenkavalier-Akt%20I.mp3"
+    },
+    {
+      "title": "9-Tschaikowsky-Danse Chinoise",
+      "fileUrl": "https://raw.githubusercontent.com/craptox2001-art/IK_Spiel/main/Audio Files/9-Tschaikowsky-Danse%20Chinoise.mp3"
+    },
+    {
+      "title": "16-Tschaikowsky-Sinfonie Nr. 4-II",
+      "fileUrl": "https://raw.githubusercontent.com/craptox2001-art/IK_Spiel/main/Audio Files/16-Tschaikowsky-Sinfonie%20Nr.%204-II.mp3"
+    },
+    {
+      "title": "31-Ravel_Boléro_Es-Klarinette",
+      "fileUrl": "https://raw.githubusercontent.com/craptox2001-art/IK_Spiel/main/Audio Files/31-Ravel_Bol%C3%A9ro_Es-Klarinette.mp3"
+    },
+    {
+      "title": "2-Bizet-Carmen-Entr'acte",
+      "fileUrl": "https://raw.githubusercontent.com/craptox2001-art/IK_Spiel/main/Audio Files/2-Bizet-Carmen-Entr'acte.mp3"
+    }
+  ],
+  "Partituren": [
+    {
+      "title": "2-Bizet-Carmen-Entr'acte",
+      "fileUrl": "https://raw.githubusercontent.com/craptox2001-art/IK_Spiel/main/Partituren/2-Bizet-Carmen-Entr'acte.png"
+    },
+    {
+      "title": "3-Debussy-Prélude a i'Après-midi",
+      "fileUrl": "https://raw.githubusercontent.com/craptox2001-art/IK_Spiel/main/Partituren/3-Debussy-Pr%C3%A9lude%20a%20i'Apr%C3%A8s-midi.png"
+    },
+    {
+      "title": "31-Ravel_Boléro_Es-Klarinette",
+      "fileUrl": "https://raw.githubusercontent.com/craptox2001-art/IK_Spiel/main/Partituren/31-Ravel_Bol%C3%A9ro_Es-Klarinette.png"
+    },
+    {
+      "title": "7-Strauss-Rosenkavalier-Akt I",
+      "fileUrl": "https://raw.githubusercontent.com/craptox2001-art/IK_Spiel/main/Partituren/7-Strauss-Rosenkavalier-Akt%20I.png"
+    },
+    {
+      "title": "9-Tschaikowsky-Danse Chinoise",
+      "fileUrl": "https://raw.githubusercontent.com/craptox2001-art/IK_Spiel/main/Partituren/9-Tschaikowsky-Danse%20Chinoise.png"
+    },
+    {
+      "title": "16-Tschaikowsky-Sinfonie Nr. 4-II",
+      "fileUrl": "https://raw.githubusercontent.com/craptox2001-art/IK_Spiel/main/Partituren/16-Tschaikowsky-Sinfonie%20Nr.%204-II.png"
+    }
+  ]
+}
