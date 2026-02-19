@@ -1,16 +1,57 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Musik-Quiz</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Musikquiz</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
+
+        .quiz-item {
+            margin-bottom: 60px;
+            padding: 20px;
+            border: 1px solid #ccc;
+        }
+
+        img {
+            max-width: 600px;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        audio {
+            width: 100%;
+            margin-bottom: 15px;
+        }
+
+        .answers button {
+            display: block;
+            margin: 5px 0;
+            padding: 12px;
+            width: 300px;
+            cursor: pointer;
+        }
+
+        .correct {
+            background: #4CAF50;
+            color: white;
+        }
+
+        .wrong {
+            background: #E53935;
+            color: white;
+        }
+    </style>
 </head>
 <body>
-<div class="menu">
-    <h1>Willkommen zum Musik-Quiz</h1>
-    <button onclick="location.href='audio.html'">Audio-Quiz</button>
-    <button onclick="location.href='partitur.html'">Partitur-Quiz</button>
-</div>
+
+<h1>Musikquiz</h1>
+<div id="quiz-container"></div>
+
+<script src="script.js"></script>
 </body>
 </html>
